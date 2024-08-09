@@ -32,12 +32,6 @@ jobs:
           max_attempts: 3
           command: ./mvnw verify --no-transfer-progress -Pwebtests
 
-      - name: Setup Testcontainers Cloud client
-        if: github.ref == 'refs/heads/main'
-        uses: atomicjar/testcontainers-cloud-setup-action@v1
-        with:
-          token: ${{ secrets.TC_CLOUD_TOKEN }}
-          logfile: testcontainers-client.log
 
       - name: Run all unit and integration tests
         timeout-minutes: 15
