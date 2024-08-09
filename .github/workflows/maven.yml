@@ -1,8 +1,6 @@
 name: Build & Test Maven Project
 on:
   push:
-  schedule:
-    - cron: '0 15 * * *' # daily at 3pm
 jobs:
   build-and-test:
     timeout-minutes: 20
